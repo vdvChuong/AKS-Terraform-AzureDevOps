@@ -3,7 +3,8 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.0.2"
+      # need to use the latest version of azurerm when deploy AKS cluster's latest version
+      version = "3.79.0"
     }
   }
 
