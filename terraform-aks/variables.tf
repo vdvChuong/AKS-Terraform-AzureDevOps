@@ -33,10 +33,26 @@ variable "aks_cluster_name" {
   type        = string
 }
 
+variable "os_type" {
+  description = "(Optional) The Operating System which should be used for this Node Pool. Changing this forces a new resource to be created. Possible values are Linux and Windows. Defaults to Linux."
+  type        = string
+  default     = "Linux"
+}
 
+variable "vnet_name" {
+  description = "AKS virtual network name"
+  default     = "aks_vnet"
+  type        = string
+}
 
-# variable "resource_group_name_prefix" {
-#   type        = string
-#   description = "Prefix of the resource group name that's combined with a random ID so name is unique in your Azure subscription."
-#   default     = "rg"
-# }
+variable "subnet_name" {
+  description = "Subnet name"
+  default     = "node_pool_subnet"
+  type        = string
+}
+
+variable "aks_vnet_address_space" {
+  description = "Specifies the address prefix of the AKS subnet"
+  default     = "10.0.0.0/16"
+  type        = string
+}
