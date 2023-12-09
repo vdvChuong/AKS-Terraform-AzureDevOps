@@ -1,3 +1,11 @@
+# Data of an existing Subnet in a Vnet
+data "azurerm_subnet" "subnet" {
+  name                 = "<name of the subnet to run in>"
+  virtual_network_name = "MyVNET"
+  resource_group_name  = "Networks"
+}
+
+# Create a new Vnet
 resource "azurerm_virtual_network" "vnet" {
   name                = var.vnet_name
   address_space       = ["10.2.0.0/16"]
